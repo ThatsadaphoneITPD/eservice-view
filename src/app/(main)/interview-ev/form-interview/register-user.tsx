@@ -1,6 +1,7 @@
 'use client';
 import Table, { HeaderCell } from '@/components/ui/table';
 import axios from 'axios';
+import { FaUserAstronaut, FaCarBattery } from "react-icons/fa";
 import React from 'react'
 import toast from 'react-hot-toast';
 import * as XLSX from 'xlsx';
@@ -337,6 +338,23 @@ export const RegisterEVList = (props: Props) => {
     return (
         <div className='w-full'>
             <div className='w-full flex justify-end my-5'>
+                <div className='w-full flex '>
+                    <FaCarBattery
+                        className=''
+                        size={40}
+                        style={{
+                            color: "#2e33a9"
+                        }}
+                    />
+                    <FaUserAstronaut
+                        className=''
+                        size={40}
+                        style={{
+                            color: "#2e33a9"
+                        }}
+                    />
+                    <h1 className='animate-bounce animate-infinite animate-duration-1000 text-4xl'>{data?.length}</h1>
+                </div>
                 <Button style={{ backgroundColor: "#2e33a9" }} onClick={() => exportToExcel()}>ດາວໂຫຼດ Excel</Button>
             </div>
             <Table data={data} columns={columns} className="text-sm h-full" />
